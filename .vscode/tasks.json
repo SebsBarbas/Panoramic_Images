@@ -1,0 +1,43 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "g++.exe build active file",
+            "command": "C:\\MinGW_64\\mingw64\\bin\\g++.exe",
+            "args": [
+                "-std=c++17",
+                "-g",
+                "${workspaceFolder}\\src\\utils\\image.cpp",
+                "${workspaceFolder}\\src\\utils\\reconstructed_image.cpp",
+                "${workspaceFolder}\\src\\utils\\reconstruction_manager.cpp",
+                "${workspaceFolder}\\src\\imagenes_panoramicass.cpp",
+                //"${workspaceFolder}\\src\\utils\\*.cpp",//"${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe",
+                "-I","C:\\OpenCV\\build\\include",
+                "-I", "C:\\Boost\\include\\boost-1_55",
+                "-L", "C:\\Boost\\lib",
+                "-lboost_system-mgw81-mt-1_55",
+                "-lboost_filesystem-mgw81-mt-1_55",
+                "-L", "C:\\OpenCV\\build\\x64\\mingw\\lib",
+                "-llibopencv_core452",
+                "-llibopencv_highgui452",
+                "-llibopencv_imgcodecs452",
+                "-llibopencv_imgproc452",
+                "-llibopencv_features2d452",
+                "-llibopencv_flann452"
+            ],
+            "options": {
+                "cwd": "C:\\MinGW_64\\mingw64\\bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
